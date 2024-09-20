@@ -1,12 +1,10 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: xmrig
-  namespace: xmrig
-  labels:
-    app: xmrig
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: xmrig
@@ -29,6 +27,6 @@ spec:
                   fieldPath: spec.nodeName
           resources:
             requests:
-              cpu: '2'
+              cpu: '0.1'
             limits:
-              cpu: '4'
+              cpu: '0.2'
